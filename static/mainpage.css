@@ -1,0 +1,96 @@
+body {
+    font-family: helvetica;
+    font-size: 20px;
+    color: #000000;
+    background: url(https://www.siarza.com/wp-content/uploads/2017/12/webplunder-background-image-technology-online-website-solutions.jpg) no-repeat;
+}
+
+h1 {
+    padding-top: 80px;
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+h3 {
+    padding-top: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+form {
+    font-size: 25px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+p {
+    align-content: center;
+}
+
+a {
+    font-size: 20px;
+    top: 50px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.loader {
+  display: none;
+  top: 65%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.loading {
+  border: 20px solid #ccc;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border-top-color: #1ecd97;
+  border-left-color: #1ecd97;
+  animation: spin 1.5s infinite ease-in;
+}
+
+#downloadResults {
+    margin-top: 300px;
+    margin-bottom: 200px;
+}
+
+#processing { 
+    top: 60%;
+    left: 46%;
+    position: absolute; 
+    font-family: "helvetica";
+    font-size: 24px;  
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+#refreshPage {
+    top: 90%;
+    left: 42%;
+    position: absolute;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

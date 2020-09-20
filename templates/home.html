@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    
+    <title>ZappyAI Contract Analysis Demo</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='mainpage.css') }}"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="icon" href="https://images.squarespace-cdn.com/content/5e6122cb5cf1560781d062ca/1583427232596-I3L1EKTZVDFVT54A1CO6/ms-icon-310x310.png?format=100w&content-type=image%2Fpng">
+
+  </head>
+
+
+  <body>
+
+    <h1>ZappyAI Contract Analysis Demo</h1>
+    <hr>
+    <h2> Please upload PDF contracts and a .txt file with questions to be asked in it. </h2> 
+    <hr>
+    <br/> <br/>
+    <h3>Select files to upload</h3> 
+    <br/>
+
+    <form id="submitform" method="post" action="/" enctype="multipart/form-data">
+      <dl>
+        <p>
+            <input id="chooseFiles" type="file" name="files[]" accept=".txt,.pdf" multiple="true" autocomplete="off" required>
+        </p>
+      </dl>
+      <p>
+        <input id="submit" type="submit" value="Submit" onclick="spinner()">
+      </p>
+    </form>
+
+    <br>
+
+    <div class="loader">
+      <div class="loading">
+      </div>
+    </div>
+
+    <h3 id="processing"> </h3>
+
+    <form id="pageRefresher">
+      
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+          $("#submitform").on("submit", function(){
+            $("#pageloader").fadeIn();
+          });
+        });
+    </script>
+
+    <script type="text/javascript">
+        var upload_status=false;
+        function spinner() {
+            if (upload_status == true) {
+                // document.getElementsByClassName("loader")[0].style.display = "block";
+                document.getElementById("processing").innerHTML = "Processing..."
+                setTimeout(function() {
+                    document.getElementById("chooseFiles").disabled = true;
+                    document.getElementById("submit").disabled = true;
+                }, (1));
+
+                document.getElementById("pageRefresher").innerHTML = "<input id=\"refreshPage\" type=\"button\" onclick=\"redirectToHome()\" value=\"Test on other documents\"/>"
+            }
+        }
+
+        var fileInput = document.getElementById('chooseFiles');
+        fileInput.onchange = function () {
+
+            var input = this.files[0];
+
+            if (input) {
+                upload_status = true;
+            }
+        };
+
+        function redirectToHome () {
+            window.location.href = "/";
+        }
+
+    </script>  
+
+
+  </body>
+
+</html>

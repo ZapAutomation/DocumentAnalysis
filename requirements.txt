@@ -1,0 +1,15 @@
+pdfminer
+Flask
+Flask-SSLify
+git+git://github.com/deepset-ai/haystack.git@ef9e4f4467a2e265bad72b048a1a3186e40969b1
+farm==0.4.3
+fastapi
+uvicorn
+gunicorn
+pandas
+psycopg2-binary
+sklearn
+elasticsearch
+elastic-apm
+tox
+coverage
